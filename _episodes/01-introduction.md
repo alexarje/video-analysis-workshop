@@ -14,6 +14,11 @@ keypoints:
 ---
 
 
+> ## Introduce yourself
+>
+> Please spend one minute to introduce yourself in the [digital pad](http://pad.software-carpentry.org/2018-02-09-Oslo-MGT) we will use during the workshop. 
+{: .challenge}
+
 
 ## Why video analysis?
 
@@ -33,9 +38,28 @@ One of the positive things about video analysis is that it opens for a broad ran
 > The important thing to understand here, is that a digital video file can be seen as a series of still images. This opens for doing various types of mathematical operations on the file. 
 {: .challenge}
 
+This is a typical file dialog with information about a file: 
 
-![Video file information](../fig/video_info.png) 
+![Video file information](../fig/video_info_320.png) 
 
+Here we can see the dimensions (640 pixels wide, 480 pixels heigh) and framerate (30 frames per second). 
+
+## Compression
+
+The file looked at in the file dialog above has been compressed with H.264. This is the most common video compression codec these days. It is a lossy codec, meaning that it throws away lots of data when it compresses. H.264 is also a time-based compression codec, meaning that it compares frames over time, and only stores the information that change between so-called keyframes. This is an efficient way of creating good-looking videos, but it is less ideal for analytical purposes. 
+
+For analysis we often prefer to use MJPEG (Motion JPEG), which is a format that stores a complete image for each frame. This leads to larger video files, but faster and easier processing. 
+
+When dealing with video files in Matlab, we have found that the good old .AVI container format is the most reliable. Matlab can handle other formats too, but .AVI files are the only ones that work on all platforms (Linux, Mac, Windows). 
+
+
+## Video as a stream of numbers
+
+As this figure illustrates, a video file is just a series of matrices with numbers: 
+
+![A video file is just a collection of numbers](../fig/digital-video.png)
+
+In a normal video file, each pixel is stored with a number between 0 and 255, where 0 means black and 255 means white. Colour files have four planes, while greyscale images only need one plane. 
 
 
 ## Recording video for analysis
