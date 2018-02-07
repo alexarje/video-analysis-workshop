@@ -1,13 +1,16 @@
 ---
 title: "Introduction"
 teaching: 10
-exercises: 0
+exercises: 5
 questions:
 - "What is a digital video file?"
 objectives:
 - "Understand the basics of digital video, including framerate, number of planes and bitrate."
 keypoints:
-- "A video file is just a series of images."
+- "A video file contains a series of images, and each image is a matrix that can be operated on."
+- "A framerate of 25fps means that there are 25 frames (images) per second."
+- "The bit rate tells about the variation of each pixel, an 8-bit image stores values from 0-255." 
+- "A colour image uses 4 planes, Alpha, Red, Green, Blue, while greyscale only uses 1 plane."
 ---
 
 
@@ -16,36 +19,30 @@ keypoints:
 
 For researchers interested in studying humans and human motion, a regular video recording is often the easiest, fastest and cheapest solution to start with. Nowadays, everyone has access to fairly high quality video cameras even in their mobile phones, and the cost of professional-quality video cameras is also within the reach for many researchers.
 
-One of the positive things about video analysis is that it opens for a broad range of analysis techniques, from purely qualitative methods to purely
-quantitative. For example, having a video recording that can be
-played back multiple times, and at various speeds, is very useful for
-visual inspection. And, as we shall see later, 
-even a regular video recording can be used to extract meaningful
-quantitative motion data. Furthermore, it is also common to use video
-recordings as a reference when recording motion with sensor-based motion
-tracking technologies. In such cases, the video recording can be used to
-help the qualitative interpretation of numerical results.
+One of the positive things about video analysis is that it opens for a broad range of analysis techniques, from purely qualitative methods to purely quantitative. For example, having a video recording that can be played back multiple times, and at various speeds, is very useful for visual inspection. And, as we shall see later, even a regular video recording can be used to extract meaningful quantitative motion data. Furthermore, it is also common to use video recordings as a reference when recording motion with sensor-based motion tracking technologies. In such cases, the video recording can be used to help the qualitative interpretation of numerical results.
+
+
+> ## What is a video file?
+> 
+> Let us start by understanding more about what a video file contains. Find a video file on your computer, for example the file *dance.avi* from the example folder. On most systems (Linux, Mac, Windows) you should be able to see some basic information about the video content by selecting something like "properties" from the file inspector.
+> 
+> - What are the dimensions?
+> - What is the framerate? 
+> - What type of compression is used? 
+> 
+> The important thing to understand here, is that a digital video file can be seen as a series of still images. This opens for doing various types of mathematical operations on the file. 
+{: .challenge}
+
+
+![Video file information](../fig/video_info.png) 
+
 
 
 ## Recording video for analysis
 
-One thing to bear in mind is that a video recording meant for analytical
-purposes is quite different from a video recording shot for documentary
-or artistic purposes. The latter type of video is usually based on the
-idea of creating an aesthetically pleasing result, which often includes
-continuous variation in the shots through changes in the lighting,
-background, zooming, panning, etc. A video recording for analysis, on
-the other hand, is quite the opposite: it is best to record it in a
-controlled studio or lab setting with as few camera changes as possible.
-This is to ensure that it is the *content* of the recording, that is,
-the human motion, which is in focus, not the motion of the camera or the
-environment.
+One thing to bear in mind is that a video recording meant for analytical purposes is quite different from a video recording shot for documentary or artistic purposes. The latter type of video is usually based on the idea of creating an aesthetically pleasing result, which often includes continuous variation in the shots through changes in the lighting, background, zooming, panning, etc. A video recording for analysis, on the other hand, is quite the opposite: it is best to record it in a controlled studio or lab setting with as few camera changes as possible. This is to ensure that it is the *content* of the recording, that is, the human motion, which is in focus, not the motion of the camera or the environment.
 
-Even though a controlled environment may be the best choice from a
-purely scientific point of view, it is possible to obtain useful
-recordings for analytical purposes also out in the field. This, however,
-requires some planning and attention to detail. Here are a few things to
-consider:
+Even though a controlled environment may be the best choice from a purely scientific point of view, it is possible to obtain useful recordings for analytical purposes also out in the field. This, however, requires some planning and attention to detail. Here are a few things to consider:
 
 -   Foreground/background: place the subject in front of a background
     that is as plain as possible, so it is possible to easily discern
@@ -80,19 +77,5 @@ point for both qualitative and quantitative analysis. We will here look
 at a couple of different possibilities, moving from more qualitative
 visualisation methods to advanced motion capture techniques.
 
-## What is a video file?
 
-We will get started with the first hands-on activities. First of all, we want to understand more about what a video file contains. 
-
-Find a video file on your computer, or select the file dance.avi from the example folder. Open the file and try to find out: 
-
-- what is the frame rate? 
-- what is the bitrate?
-- what type of compression is used? 
-
-On most systems (Linux, Mac, Windows) you should be able to do this by selecting something like "properties" from the file inspector.
-
-The important thing to understand here, is that a digital video file can be seen as a series of still images. This opens for doing various types of mathematical operations on the file. 
-
-![Video file information](video_info.png) 
-
+{% include links.md %}

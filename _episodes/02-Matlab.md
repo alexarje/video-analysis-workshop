@@ -1,37 +1,76 @@
 ---
-title: "Introduction to Matlab"
+title: "Getting around Matlab"
 teaching: 5
-exercises: 0
+exercises: 10
 questions:
-- "What is Matlab?"
+- "How do you get set up in Matlab?"
 objectives:
-- "Understand that Matlab is a flexible high-level programming environment."
+- "Understand that Matlab is a text-based programming environment."
+- "Learn how to set the path for toolboxes."
 keypoints:
-- "A video file is just a series of images."
+- "A semicolon at the end of a line will not display the commands output."
+- "Toolboxes need to be added to path before they can be used."
 ---
-
-
 
 
 Before we get started with MGT, we will familiarize ourselves just a little bit in Matlab. 
 
-Matlab is a scripting language, in which you type a command in the and press <kbd>Return</kbd>. Try to type in the following lines: 
+
+## Your first Matlab scripting
+
+Matlab is a scripting language, in which you type a message in the command window and press <kbd>Return</kbd>. Try to type in the following lines: 
 
 ~~~
-    a=1
-    b=2
-
-    c=a+b
+1+1
 ~~~
-{: .language-matlab}
+{: .matlab}
 
-
-Then you can do: 
+One of the strengths of Matlab is to be able to work with symbols. Try this: 
 
 ~~~
-disp('Hello, world!')
+a=1
+b=2
+c=a+b
 ~~~
-{: .language-matlab}
+{: .matlab}
+
+You can also try combinations of symbols and numbers: 
+
+~~~
+(a+1)*(b+2)
+~~~
+{: .matlab}
+
+
+## The semicolon
+
+The semicolon is important in Matlab. Look at the difference between this: 
+
+~~~
+a+b;
+~~~
+{: .matlab}
+
+and this message: 
+
+~~~
+a+b
+~~~
+{: .matlab}
+
+
+## Plotting
+
+One of the big strengths of Matlab is all the plotting functions. Try this example: 
+
+~~~
+xlabel('x = 0:2\pi')
+ylabel('Sine of x')
+title('Plot of the Sine Function')
+~~~
+{: .matlab}
+
+That is about what you need to know to get started with MGT. 
 
 
 
@@ -42,4 +81,16 @@ disp('Hello, world!')
 
 ## Toolboxes
 
-One of the strenghts of Matlab is that there are lots of toolboxes available. 
+One of the strenghts of Matlab is that there are lots of toolboxes available. The MGT is one such toolbox, and it builds on some other toolboxes: [matlabPyrTools](http://se.mathworks.com/matlabcentral/fileexchange/52571-matlabpyrtools), [MoCap Toolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mocaptoolbox) and [MIRtoolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mirtoolbox). For these toolboxes to work properly, we need to add them to the *path* of Matlab. That is a location for extra stuff that we want to add. This should typically be a folder in your home folder. 
+
+## Adding path
+> Add the files in the folder "source-code" to your Matlab path: under the "Home" section, click "set path". Click the "Add Folder" button and choose the "source-code" folder and finally click "save".
+{: .challenge}
+
+When you are done, you should be able to run the following command: 
+
+~~~
+mgcheck
+~~~
+{: .matlab}
+
