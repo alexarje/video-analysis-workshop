@@ -16,5 +16,4 @@ This lesson has been developed by [Alexander Refsum Jensenius](http://people.uio
 >
 > - Have an interest in analyzing video recordings 
 > - Have a laptop with Matlab installed or access to a remote version ([UiO kosk](http://view.uio.no)). 
-
 {: .prereq}
