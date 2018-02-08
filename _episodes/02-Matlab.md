@@ -87,6 +87,12 @@ One of the strenghts of Matlab is that there are lots of toolboxes available. Th
 > Add the files in the folder "source-code" to your Matlab path: under the "Home" section, click "set path". Click the "Add Folder" button and choose the "source-code" folder and finally click "save".
 {: .challenge}
 
+It is also possible to set the path via the command line in Matlab, using something like: 
+
+    addpath('~/Documents/Toolboxes');
+
+
+
 When you are done, you should be able to run the following command: 
 
 ~~~

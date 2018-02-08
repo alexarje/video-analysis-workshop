@@ -21,8 +21,32 @@ The MGT contains several more advanced analysis features, some with limited docu
 
 
 
-## Motion 
+## Motion magnification
 
+    mg = mgvideomagnify('pianist.avi','IIR',0.4,0.05,10,16,0.1);
+
+
+
+
+## Periodicity
+
+Next,the periodicity of movement might be investigated from the quantity of motion. Let's
+have a look at it.
+
+    [per,ac,eac,lag] = mgautocor(mg,'video');
+
+The period is 0.198 seconds. The first maximum at nonzero lag is 0.198 seconds, this
+is the same as the privious value. 
+
+
+
+## Statistics
+
+If we want to look at some features of motion image, function mgstatistics can generate
+first order and second order features.
+
+    features1 = mgstatistics(mgsegmo,'Video','FirstOrder');
+    features2 = mgstatistics(mgsegmo,'Video','SecondOrder');
 
 
 

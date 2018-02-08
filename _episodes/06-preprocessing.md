@@ -42,6 +42,13 @@ draw a region, and right-click the mouse and select crop image to create the reg
     mgsegmo = mgmotion(mgseg,'Diff ');
 
 
+## Rotating
+
+Sometimes you may want to rotate the video before doing an analysis. For example, analysing standing people may be easier to do with a video recorded in portrait mode. Then it may be useful to rotate the video in Matlab. This can be done like this: 
+
+    mgrot = mgvideorotate(file,angle);
+
+
 ## Downsampling
 
 Analysing large, full-size video files can be very time-consuming. Therefore it may sometimes be useful to downsample the video file before moving on. This can be done like this: 
@@ -52,26 +59,6 @@ This reduces the framesize of the video with a factor of 2 in both rows and colu
 
 
 
-
-## Periodicity
-
-Next,the periodicity of movement might be investigated from the quantity of motion. Let's
-have a look at it.
-
-    [per,ac,eac,lag] = mgautocor(mg,'video');
-
-The period is 0.198 seconds. The first maximum at nonzero lag is 0.198 seconds, this
-is the same as the privious value. 
-
-
-
-## Statistics
-
-If we want to look at some features of motion image, function mgstatistics can generate
-first order and second order features.
-
-    features1 = mgstatistics(mgsegmo,'Video','FirstOrder');
-    features2 = mgstatistics(mgsegmo,'Video','SecondOrder');
 
 
 {% include links.md %}

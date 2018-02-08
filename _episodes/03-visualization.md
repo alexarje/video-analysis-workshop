@@ -80,10 +80,15 @@ Here we output to a compressed .MP4 file, which is a great format for video that
 
 If you think there is too much noise in the output images or video, you may choose to use some other filter settings. Try this: 
 
-    mgmotion('dance.avi','Diff','Regular',0.2);
+    mgmotion('dance.avi','Diff','Regular',0.1);
 
 Here a filter setting of 0.2 is used instead of 0.1. The number goes between 0 and 1, where 0 will let through all pixels, while 1 will only let through completely white pixels. The default setting is 0.1, and this usually works quite well for most videos. If you want more detail you can try setting it down to 0.05, or if you have too much noise you can raise it to 0.2 or 0.3. 
 
+The two other settings above refer to the type of motion analysis we are doing (*OpticalFlow* is another option, which we will look at towards the end) and the type of filter we are using (*Binary* will output a black/white video as opposed to greyscale). Try for example
+
+    mgmotion('dance.avi','Diff','Binary',0.2)
+
+The 
 
 > ## Getting help
 > You can always ask Matlab for help with any command, for example like this: 
