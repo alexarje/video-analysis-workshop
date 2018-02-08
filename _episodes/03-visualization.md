@@ -38,7 +38,24 @@ MGT can generate both dynamic and static visualizations, as well as some quantit
 In the following we will try this ourselves, and look at the different types. 
 
 
-## Motion images
+## Simple motion analysis
+The easiest way to get started with analysing video with MGT is by just running the function mgmotion. You can try this with one of the example files like this: 
+
+    mgmotion('dance.avi');
+
+This will generate four files in the same location as your source file: 
+
+- dance_motion.avi: the motion video that is used as the source for the rest of the analysis
+- dance_mgx.tiff: a horizontal motiongram
+- dance_mgy.tiff: a vertical motiongram
+- dance_data.csv: a data file with some quantitative features
+- dance_com_qom.eps: an image file with plots of centroid and quantity of motion
+
+We will examine each of these in a little more detail. 
+
+
+
+## Motion video
 
 All of the analysis covered in this part is based on a very common technique in video analysis called "frame differencing". Here we create a *motion image* by calculating the absolute pixel difference between subsequent frames in the video file: 
 
@@ -46,28 +63,7 @@ All of the analysis covered in this part is based on a very common technique in 
 
 The end result is an image where only the pixels that have changed between the frames are displayed. This can be interesting in itself, but motion images are also the starting point for many other video visualisation and analysis techniques.
 
-
-> ## Simple motion analysis
-> The easiest way to get started with analysing video with MGT is by just running the function mgmotion. You can try this with one of the example files like this: 
->
->     mgmotion('dance.avi');
->
-> This will generate four files in the same location as your source file: 
-> 
-> - dance_motion.avi: the motion video that is used as the source for the rest of the analysis
-> - dance_mgx.tiff: a horizontal motiongram
-> - dance_mgy.tiff: a vertical motiongram
-> - dance_data.csv: a data file with some quantitative features
-> - dance_com_qom.eps: an image file with plots of centroid and quantity of motion
-> 
-> We will examine each of these in a little more detail. 
-{: .challenge}
-
-
-
-## Motion video
-
-A motion video is a series of motion images, each showing only the motion happening between the two last frames in the original video file.
+A *motion video* is a series of motion images, each showing only the motion happening between the two last frames in the original video file.
 
 Matlab does not have an easy and universal approach of adding audio streams to exported video files. So if you want audio on your motion video, it is better to do that outside of Matlab, using [ffmpeg](http://www.ffmpeg.org). This oneliner will do the trick:
 
@@ -88,7 +84,6 @@ The two other settings above refer to the type of motion analysis we are doing (
 
     mgmotion('dance.avi','Diff','Binary',0.2)
 
-The 
 
 > ## Getting help
 > You can always ask Matlab for help with any command, for example like this: 
