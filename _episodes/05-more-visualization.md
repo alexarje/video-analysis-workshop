@@ -53,3 +53,6 @@ We have up until now primarily worked with video in greyscales. This is more cpu
 
 The number 20 here refers to the number of frames of the history. You can try some different settings here too. 
 
+
+
+{% include links.md %}

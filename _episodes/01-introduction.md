@@ -102,4 +102,16 @@ at a couple of different possibilities, moving from more qualitative
 visualisation methods to advanced motion capture techniques.
 
 
+## Preparing video for analysis in Matlab
+
+You can use a number of different types of video for analysis, but if we should highlight a few things, these would be: 
+
+- Video: use MJPEG (Motion JPEG) as the compression format. This compresses each frame individually. 
+- Audio: use uncompressed audio (16-bit PCM). If you need to use compression, MP3 compression (MPEG-1, Layer 3) is still more versatile than AAC (which is used in .MP4 files). If you use a bitrate of 192 Kbs or higher, you should not get too much artifacts. 
+
+[FFMPEG](https://www.ffmpeg.org/) is a very useful (free) tool for doing all sorts of audio/video manipulation, and can be installed on most systems. It it somewhat intimidating for beginners, but the trick is just to know what works. Here is a oneliner that will convert from an .MP4 file into a .AVI file with MJPEG and PCM audio: 
+
+    ffmpeg -i input.mp4 -c:a pcm_s16le -c:v mjpeg -q:v 3 -huffman optimal output.avi
+
+
 {% include links.md %}

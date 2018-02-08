@@ -1,7 +1,7 @@
 ---
 title: "Combining video, audio and mocap"
 teaching: 5
-exercises: 15
+exercises: 20
 questions:
 - "How is is possible to analyze video, audio and mocap together"
 objectives:
@@ -66,3 +66,6 @@ seconds. This value is the same as period estimated by mgautocor function.
 33Figure 9: spectrum of qom and rms
 Figure 10: the first order feature space
 34Figure 11: the second order feature space
+
+
+{% include links.md %}

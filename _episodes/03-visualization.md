@@ -69,7 +69,11 @@ The end result is an image where only the pixels that have changed between the f
 
 A motion video is a series of motion images, each showing only the motion happening between the two last frames in the original video file.
 
+Matlab does not have an easy and universal approach of adding audio streams to exported video files. So if you want audio on your motion video, it is better to do that outside of Matlab, using [ffmpeg](http://www.ffmpeg.org). This oneliner will do the trick:
 
+    ffmpeg -i dance.avi -i dance_motion.avi -c copy -map 1:v:0 -map 0:a:0 -shortest -c:v mpeg4 -c:a aac dance_motion_audio.mp4
+
+Here we output to a compressed .MP4 file, which is a great format for video that is primarily meant for watching (not further analysis).
 
 
 ## Filtering
@@ -139,4 +143,6 @@ The *centroid of motion* (CoM) and *area of motion* (AoM) are other basic featur
 
 ![Illustrations of the area and centroid of body and motion.](../fig/centroid-of-motion_640.jpg)
 
+
+{% include links.md %}
 

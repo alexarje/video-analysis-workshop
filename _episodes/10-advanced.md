@@ -1,7 +1,7 @@
 ---
 title: "Advanced techniques"
-teaching: 10
-exercises: 20
+teaching: 5
+exercises: 15
 questions:
 - "What more advanced features are there?"
 objectives:
@@ -95,3 +95,7 @@ regularly.
 39Figure 18: Similarity matrix of spectrum of 9 persons
 Figure 19: Periodicity of each person
 40
+
+
+
+{% include links.md %}

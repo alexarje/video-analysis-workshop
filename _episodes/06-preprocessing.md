@@ -72,3 +72,6 @@ first order and second order features.
 
     features1 = mgstatistics(mgsegmo,'Video','FirstOrder');
     features2 = mgstatistics(mgsegmo,'Video','SecondOrder');
+
+
+{% include links.md %}
