@@ -21,7 +21,7 @@ keypoints:
 Videos can be watched as they are, but they can also be used to develop new visualisations to be used for analysis. The aim of creating such alternate displays from video recordings is to uncover features, structures and similarities within the material itself, and in relation to, for example, score material. Three useful visualisation techniques here are *motion images*, *motion history images* and *motiongrams*.
 
 
-MGT can generate both dynamic and static visualizations, as well as some quantitative data: 
+MGT can generate both dynamic and static visualizations, as well as some quantitative data:
 
 - dynamic visualisations (video files)
 	- motion video
@@ -35,15 +35,19 @@ MGT can generate both dynamic and static visualizations, as well as some quantit
 	- centroid of motion
 	- area of motion
 
-In the following we will try this ourselves, and look at the different types. 
+In the following we will try this ourselves, and look at the different types.
 
 
 ## Simple motion analysis
-The easiest way to get started with analysing video with MGT is by just running the function mgmotion. You can try this with one of the example files like this: 
+The easiest way to get started with analysing video with MGT is by just running the function mgmotion. In Matlab you need to ensure that you are in the "examples" working directory.
+
+![This is how it looks if you are in the correct folder in Matlab.](../fig/examples-folder.png)
+
+Then you can write the following to run the mgmotion function on the video file dance.avi:
 
     mgmotion('dance.avi');
 
-This will generate four files in the same location as your source file: 
+This will generate four files in the same location as your source file:
 
 - dance_motion.avi: the motion video that is used as the source for the rest of the analysis
 - dance_mgx.tiff: a horizontal motiongram
@@ -51,13 +55,13 @@ This will generate four files in the same location as your source file:
 - dance_data.csv: a data file with some quantitative features
 - dance_com_qom.eps: an image file with plots of centroid and quantity of motion
 
-We will examine each of these in a little more detail. 
+We will examine each of these in a little more detail.
 
 
 
 ## Motion video
 
-All of the analysis covered in this part is based on a very common technique in video analysis called "frame differencing". Here we create a *motion image* by calculating the absolute pixel difference between subsequent frames in the video file: 
+All of the analysis covered in this part is based on a very common technique in video analysis called "frame differencing". Here we create a *motion image* by calculating the absolute pixel difference between subsequent frames in the video file:
 
 ![A *motion image* is created by subtracting subsequent frames in a video file (Frame(2) - Frame(1)).](../fig/motion-image_640.jpg)
 
@@ -74,23 +78,24 @@ Here we output to a compressed .MP4 file, which is a great format for video that
 
 ## Filtering
 
-If you think there is too much noise in the output images or video, you may choose to use some other filter settings. Try this: 
+If you think there is too much noise in the output images or video, you may choose to use some other filter settings. Try this:
 
     mgmotion('dance.avi','Diff','Regular',0.1);
 
-Here a filter setting of 0.2 is used instead of 0.1. The number goes between 0 and 1, where 0 will let through all pixels, while 1 will only let through completely white pixels. The default setting is 0.1, and this usually works quite well for most videos. If you want more detail you can try setting it down to 0.05, or if you have too much noise you can raise it to 0.2 or 0.3. 
+Here a filter setting of 0.2 is used instead of 0.1. The number goes between 0 and 1, where 0 will let through all pixels, while 1 will only let through completely white pixels. The default setting is 0.1, and this usually works quite well for most videos. If you want more detail you can try setting it down to 0.05, or if you have too much noise you can raise it to 0.2 or 0.3.
 
-The two other settings above refer to the type of motion analysis we are doing (*OpticalFlow* is another option, which we will look at towards the end) and the type of filter we are using (*Binary* will output a black/white video as opposed to greyscale). Try for example
+The two other settings above refer to the type of motion analysis we are doing (*OpticalFlow* is another option, which we will look at towards the end) and the type of filter we are using (*Binary* will output a black/white video as opposed to greyscale). Try for example:
 
     mgmotion('dance.avi','Diff','Binary',0.2)
 
+Please note that every time you run the mgmotion function on the same file, it will overwrite the output from the previous run. So if you want to keep differently filtered versions, you need to rename them. It may also be beneficial to copy the output files into a separate folder in which you specify the different settings you used.
 
 > ## Getting help
-> You can always ask Matlab for help with any command, for example like this: 
+> You can always ask Matlab for help with any command, for example like this:
 >
 >     help mgmotion
 >
-> which will tell you about the different options and settings. 
+> which will tell you about the different options and settings.
 {: .callout}
 
 
@@ -145,4 +150,3 @@ The *centroid of motion* (CoM) and *area of motion* (AoM) are other basic featur
 
 
 {% include links.md %}
-
