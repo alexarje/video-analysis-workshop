@@ -81,10 +81,10 @@ That is about what you need to know to get started with MGT.
 
 ## Toolboxes
 
-One of the strenghts of Matlab is that there are lots of toolboxes available. The MGT is one such toolbox, and it builds on some other toolboxes: [matlabPyrTools](https://github.com/LabForComputationalVision/matlabPyrTools/archive/master.zip), [MoCap Toolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mocaptoolbox) and [MIRtoolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mirtoolbox). For these toolboxes to work properly, we need to add them to the *path* of Matlab. That is a location for extra stuff that we want to add. This should typically be a folder in your home folder. 
+One of the strenghts of Matlab is that there are lots of toolboxes available. The MGT is one such toolbox, and it builds on some other toolboxes: [matlabPyrTools](https://github.com/LabForComputationalVision/matlabPyrTools/archive/master.zip), [MoCap Toolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mocaptoolbox) and [MIRtoolbox](https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mirtoolbox). For these toolboxes to work properly, we need to add them to the *path* of Matlab. That is a location for extra stuff that we want to add. This should typically be a folder in your home folder.
 
 ## Adding path
-> Add the files from the [workshop zip-file](http://www.uio.no/english/research/groups/fourms/downloads/software/MGT-Matlab/releases/2018-mgt-resbaz.zip) to your Matlab path: under the "Home" section, click "set path". Click the "Add Folder" button and choose the "source-code" folder and finally click "save".
+> Add the files from the [workshop zip-file](../setup.html) to your Matlab path: under the "Home" section, click "set path". Click the "Add Folder" button and choose the "source-code" folder and finally click "save".
 {: .challenge}
 
 It is also possible to set the path via the command line in Matlab, using something like:
