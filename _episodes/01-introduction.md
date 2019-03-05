@@ -8,7 +8,7 @@ objectives:
 - "Understand the basics of digital video, including framerate, number of planes and bitrate."
 keypoints:
 - "A video file contains a series of images, and each image is a matrix that can be operated on."
-- "A framerate of 25fps means that there are 25 frames (images) per second."
+- "A framerate of 25 fps means that there are 25 frames (images) per second."
 - "The bit rate tells about the variation of each pixel, an 8-bit image stores values from 0-255."
 - "A colour image uses 4 planes, Alpha, Red, Green, Blue, while greyscale only uses 1 plane."
 ---
@@ -42,11 +42,11 @@ This is a typical file dialog with information about a file:
 
 ![Video file information](../fig/video_info_320.png)
 
-Here we can see the dimensions (640 pixels wide, 480 pixels heigh) and framerate (30 frames per second).
+Here we can see the dimensions (640 pixels wide, 480 pixels tall) and framerate (30 frames per second).
 
 ## Compression
 
-The file looked at in the file dialog above has been compressed with H.264. This is the most common video compression codec these days. It is a lossy codec, meaning that it throws away lots of data when it compresses. H.264 is also a time-based compression codec, meaning that it compares frames over time, and only stores the information that change between so-called keyframes. This is an efficient way of creating good-looking videos, but it is less ideal for analytical purposes.
+The properties of the video file described above above, shows that the video stream has been compressed with the H.264 standard. This is the most common video compression codec these days. It is a *lossy codec*, meaning that it throws away lots of data when it compresses the file. The H.264 standard is also a *time-based* compression codec, meaning that it compares frames over time, and only stores the information that change between so-called keyframes. This is an efficient way of creating good-looking videos, but it is less ideal for analytical purposes.
 
 For analysis we often prefer to use MJPEG (Motion JPEG), which is a format that stores a complete image for each frame. This leads to larger video files, but faster and easier processing.
 
@@ -106,8 +106,8 @@ visualisation methods to advanced motion capture techniques.
 
 You can use a number of different types of video for analysis, but if we should highlight a few things, these would be:
 
-- Video: use MJPEG (Motion JPEG) as the compression format. This compresses each frame individually.
-- Audio: use uncompressed audio (16-bit PCM). If you need to use compression, MP3 compression (MPEG-1, Layer 3) is still more versatile than AAC (which is used in .MP4 files). If you use a bitrate of 192 Kbs or higher, you should not get too much artifacts.
+- Video: use MJPEG (Motion JPEG) as the compression format. This compresses each frame individually. Use .AVI as the container, since this is the one that works best on all platforms.
+- Audio: use uncompressed audio (16-bit PCM), saved as .WAV files (.AIFF usually also works fine). If you need to use compression, MP3 compression (MPEG-1, Layer 3) is still more versatile than AAC (which is used in .MP4 files). If you use a bitrate of 192 Kbs or higher, you should not get too much artifacts.
 
 [FFMPEG](https://www.ffmpeg.org/) is a very useful (free) tool for doing all sorts of audio/video manipulation, and can be installed on most systems. It it somewhat intimidating for beginners, but the trick is just to know what works. Here is a oneliner that will convert from an .MP4 file into a .AVI file with MJPEG and PCM audio:
 
